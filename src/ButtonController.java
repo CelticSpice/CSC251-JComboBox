@@ -1,6 +1,6 @@
 /**
     This is the controller for the GUI's buttons
-    Date
+    11/2/2016
     CSC 251 0001 - JComboBox Demonstration
     @author James Alves, Shane McCann, Timothy Burns
 */
@@ -77,7 +77,14 @@ public class ButtonController implements ActionListener
                     try
                     {
                         img = getImage();
-                        success = true;
+                        if (img != null)
+                        {
+                            success = true;
+                        }
+                        else
+                        {
+                            throw new IOException();
+                        }
                     }
                     catch (IOException ex)
                     {
@@ -105,14 +112,15 @@ public class ButtonController implements ActionListener
                 break;
             case "Delete Element":
                 // Delete currently selected element from model and view
-                int selectionIndex = view.getSelectionIndex();
-                if (selectionIndex != -1)
+                String selection = view.getSelection();
+                int index = model.getCountryNameIndex(selection);
+                if (index != -1)
                 {
                     // Remove data from model
-                    model.removeData(selectionIndex);
+                    model.removeData(index);
                     
                     // Update view
-                    view.removeElement(selectionIndex);
+                    view.removeElement(index);
                     view.setTranslation("");
                     view.removeImage();
                     

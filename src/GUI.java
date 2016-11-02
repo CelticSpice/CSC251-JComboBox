@@ -1,6 +1,6 @@
 /**
     This is the GUI of the JComboBoxDemonstration program
-    Date
+    11/2/2016
     CSC 251 0001 - JComboBox Demonstration
     @author James Alves, Shane McCann, Timothy Burns
 */
@@ -167,17 +167,6 @@ public class GUI extends JFrame
     }
     
     /**
-        The getSelectionIndex method returns the index of the user's selection
-    
-        @return The index of the user's selection
-    */
-    
-    public int getSelectionIndex()
-    {
-        return box.getSelectedIndex();
-    }
-    
-    /**
         The promptFailure method prompts the user of a failed operation
     */
     
@@ -243,7 +232,7 @@ public class GUI extends JFrame
     
     public boolean promptGetImageFailure()
     {
-        boolean tryAgain;
+        boolean tryAgain = false;
         
         int result = JOptionPane.showConfirmDialog(this, "Failed to get " +
                                  "image at the specified URL.\n" +
@@ -254,10 +243,6 @@ public class GUI extends JFrame
         if (result == JOptionPane.YES_OPTION)
         {
             tryAgain = true;
-        }
-        else
-        {
-            tryAgain = false;
         }
         
         return tryAgain;

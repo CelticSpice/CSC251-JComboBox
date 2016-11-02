@@ -1,7 +1,7 @@
 /**
     This program is a demonstration of JComboBox, and attempts to adhere
     to the Model-View-Controller (MVC) pattern
-    Date
+    11/2/2016
     CSC 251 0001 - JComboBox Demonstration
     @author James Alves, Shane McCann, Timothy Burns
 */

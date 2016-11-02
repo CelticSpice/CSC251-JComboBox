@@ -1,6 +1,6 @@
 /**
     This is the controller for the JComboBox
-    Date
+    11/2/2016
     CSC 251 0001 - JComboBox Demonstration
     @author James Alves, Shane McCann, Timothy Burns
 */
