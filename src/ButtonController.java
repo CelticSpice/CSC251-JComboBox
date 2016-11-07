@@ -1,6 +1,6 @@
 /**
     This is the controller for the GUI's buttons
-    11/2/2016
+    11/7/2016
     CSC 251 0001 - JComboBox Demonstration
     @author James Alves, Shane McCann, Timothy Burns
 */
@@ -69,8 +69,8 @@ public class ButtonController implements ActionListener
                 } while (translation.isEmpty());
                 
                 // Get image
-                boolean success = false;
-                boolean keepGoing = false;
+                boolean success = false;        // Are we successful?
+                boolean keepGoing = false;      // Should we keep trying if not?
                 BufferedImage img = null;
                 do
                 {
@@ -83,6 +83,10 @@ public class ButtonController implements ActionListener
                         }
                         else
                         {
+                            // If we fail to get image from URL, no exception
+                            // may be thrown and instead the image is returned
+                            // null. So, we manually throw an exception in this
+                            // case
                             throw new IOException();
                         }
                     }

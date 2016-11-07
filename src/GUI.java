@@ -1,6 +1,6 @@
 /**
     This is the GUI of the JComboBoxDemonstration program
-    11/2/2016
+    11/7/2016
     CSC 251 0001 - JComboBox Demonstration
     @author James Alves, Shane McCann, Timothy Burns
 */
@@ -38,7 +38,7 @@ public class GUI extends JFrame
         setTitle("JComboBox Demonstration");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         add(createPanel());
-        setSize(425, 375);
+        pack();
         setVisible(true);
     }
     
@@ -50,7 +50,7 @@ public class GUI extends JFrame
     
     public void addElement(String element)
     {
-        ((DefaultComboBoxModel)box.getModel()).addElement(element);
+        box.addItem(element);
     }
     
     /**
@@ -275,7 +275,7 @@ public class GUI extends JFrame
     
     public void removeElement(int index)
     {
-        ((DefaultComboBoxModel)box.getModel()).removeElementAt(index);
+        box.removeItemAt(index);
     }
     
     /**
@@ -296,6 +296,7 @@ public class GUI extends JFrame
     public void setImage(BufferedImage image)
     {
         imageLabel.setIcon(new ImageIcon(image));
+        pack();
     }
     
     /**
@@ -306,7 +307,7 @@ public class GUI extends JFrame
     
     public void setModel(Model m)
     {
-        box.setModel(new DefaultComboBoxModel(m.getCountryNames()));
+        box.setModel(new DefaultComboBoxModel<>(m.getCountryNames()));
     }
     
     /**
